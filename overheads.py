@@ -7,14 +7,14 @@ from unicodedata import category
 
 file_path = Path.cwd()/"CSV_reports"
 overheads = Path.cwd()/"CSV_reports"/"Overheads.csv"
-overheads.touch
+overheads.touch()
 
 with overheads.open(mode="w",encoding='UTF-8',newline ="") as file:
         writer = csv.writer(file)
-        writer.writerow(["category","overheads"])
+        writer.writerow(["category: overheads"])
         file.close()
 
-for file in file_path("*Overheads.csv*"):
+for file in file_path("*Overheads.csv()*"):
         emptylist = []
         
 with file_path.open(mode="r",encoding='UTF-8',newline ="") as file:
