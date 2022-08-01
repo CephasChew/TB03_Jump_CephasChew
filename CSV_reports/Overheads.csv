@@ -1,24 +1,12 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-Category	Overheads
-Salary Expense	24.18
-Interest Expense 	2.25
-Marketing Expense	5.59
-Rental Expense	20.28
-Overflow Expense - Retail	3.88
-Overflow Expense - Warehouse	0.11
-Penalty Expense	7.66
-Depreciation Expense	16.72
-Maintenance Expense	7.94
-Shipping Expense	0.3
-Human Resource Expense	11.09
-=======
-Salary expense,Interest expense,Marketing expense,Overflow expense-retail,Overflow expense-warehouse,Penalty expense,Depreciation expense,Maintenanec expense,Shipping expense,Huamn resource expense
-24.18,2.25,5.59,20.28,3.88,0.11,7.66,16.72,7.94,0.3,11.09
-
-
->>>>>>> 311c0290209d447744d97cd34f6fbe52551c1dd0
-=======
-"Salary expense","Interest expense,Marketing expense","Overflow expense-retail","Overflow expense-warehouse","Penalty expense","Depreciation expense","Maintenanec expense","Shipping expense","Huamn resource expense"
-"24.18","2.25","5.59","20.28","3.88","0.11","7.66","16.72","7.94","0.3","11.09"
->>>>>>> f65b9a03a1ffec91accd74441671d7529cd37efa
+Category,Overheads
+Salary Expense,24.18
+Interest Expense ,2.25
+Marketing Expense,5.59
+Rental Expense,20.28
+Overflow Expense - Retail,3.88
+Overflow Expense - Warehouse,0.11
+Penalty Expense,7.66
+Depreciation Expense,16.72
+Maintenance Expense,7.94
+Shipping Expense,0.3
+Human Resource Expense,11.09
