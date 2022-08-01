@@ -1,21 +1,29 @@
+from atexit import register
 from pathlib import Path
 import csv
+from platform import java_ver
+import re
 from unicodedata import category
 
-file_path = Path.cwd()/"CSV_reports"/"Overheads.py"
+emptylist=[]
+
+file_path = Path.cwd()/"CSV_reports"/"Overheads.csv"
+
 with file_path.open(mode="r",encoding='UTF-8',newline ="") as file:
         text = file.read()
-for file in file_path("Overheads.csv"):
-    emptylist=[]
-    category = ["Salary expense","Interest expense,Marketing expense","Overflow expense-retail","Overflow expense-warehouse","Penalty expense","Depreciation expense","Maintenanec expense","Shipping expense","Huamn resource expense"]
-    overheads = [24.18,2.25,5.59,20.28,3.88,0.11,7.66,16.72,7.94,0.3,11.09]
-    
+category = "Salary expense","Interest expense,Marketing expense","Overflow expense-retail","Overflow expense-warehouse","Penalty expense","Depreciation expense","Maintenanec expense","Shipping expense","Huamn resource expense"
+overheads = (re.findall(pattern="[0-9].+", string=text))
+for i in range (1):
+        emptylist.append(category)
+        emptylist.extend(overheads)
+print(emptylist)
+        
 
 
 
 
 
-            
+
 
 
 
