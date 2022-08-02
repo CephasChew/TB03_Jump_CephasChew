@@ -26,6 +26,6 @@ def highest():
                 if each > largestvalue:
                         largestvalue = each
 
-        print("[HIGHEST VALUE] Salary Expense:", largestvalue)
+        print("[HIGHEST OVERHEADS] Salary Expense:", largestvalue)
 highest()
                 
