@@ -24,3 +24,14 @@ for info in empty:
         new.append(info)
 
 print(new)
+
+def highest():
+        largestvalue=-1
+
+        for each in (new):
+                if each > largestvalue:
+                        largestvalue = each
+
+        print("[HIGHEST VALUE] Salary Expense:", largestvalue)
+highest()
+                
