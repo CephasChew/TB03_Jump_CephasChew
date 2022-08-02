@@ -1,20 +1,26 @@
-from atexit import register
 from pathlib import Path
 import csv
-from pickle import EMPTY_LIST
-from platform import java_ver
 import re
 from unicodedata import category
 
+
+empty=[]
+
 file_path = Path.cwd()/"CSV_reports"
-file_path = Path.cwd()/"CSV_reports"/"Overheads.csv"
-emptylist =[]
-        
-with file_path.open(mode="r",encoding='UTF-8',newline ="") as file:
+overheads = Path.cwd()/"CSV_reports"/"Overheads.csv"
+overheads.touch()
+overheads_list = [["Salary Expense",24.18], ["Interest Expense",2.25], ["Marketing Expense",5.59],["Rental Expense",20.28],["Overflow Expense - Retail",3.88],["Overflow Expense - Warehouse",0.11],["Penalty Expense",7.66],["Depreciation Expense",16.72],["Maintenance Expense",7.94],["Shipping Expense",0.3],["Human Resource Expense",11.09]]
+
+with overheads.open(mode="w", encoding = "UTF-8", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["Category", "Overheads"])
+        for sublist in overheads_list:
+                writer.writerow(sublist)
+file.close()
+
+
+with overheads.open(mode="r", encoding = "UTF-8") as file:
         text = file.read()
-        Category = (re.search(pattern="Block.+", string=text))
-        overheads = (re.findall(pattern="[0-9].+", string=text))
-print(category)
-
-
-
+        category = (re.findall(pattern="[A-Z].+", string=text))
+        max=(category)
+print(max)
