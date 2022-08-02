@@ -1,32 +1,31 @@
 from pathlib import Path
 import csv
+empty_list = []
 file_path = Path.cwd()/"CSV_reports"/"Profits and Loss.csv"
-#Current working directory for the csv file
-with open(file_path, newline='') as f:
-    reader = csv.reader(f)
-    data = list(reader)
-    #Convert csv file to list
-day40 = data[1]
-day41 = data[2]
-day42 = data[3]
-day43 = data[4]
-day44 = data[5]
-day45 = data[6]
-#Indexing to find the data
-np40 = int(day40[4])
-np41 = int(day41[4])
-np42 = int(day42[4])
-np43 = int(day43[4])
-np44 = int(day44[4])
-np45 = int(day45[4])
+with file_path.open(mode='r',encoding='UTF-8',newline='') as file:
+    reader=csv.reader(file)
+    next(reader)
+    for line in reader:
+        for value in line:
+            empty_list.append(value)
 
-if np41 < np40:
-    print(f"[CASH DEFICIT] DAY: {day41[0]}, AMOUNT: SGD{abs(np41-np40)}")
-elif np42 < np41:
-    print(f"[CASH DEFICIT] DAY: {day42[0]}, AMOUNT: SGD{abs(np42-np41)}")
-elif np43 < np42:
-    print(f"[CASH DEFICIT] DAY: {day43[0]}, AMOUNT: SGD{abs(np43-np42)}")
-elif np44 < np43:
-    print(f"[CASH DEFICIT] DAY: {day44[0]}, AMOUNT: SGD{abs(np44-np43)}")
-elif np45 < np44:
-    print(f"[CASH DEFICIT] DAY: {day45[0]}, AMOUNT: SGD{abs(np45-np44)}")
+new_list = []
+for info in empty_list:
+    info=int(info)
+    new_list.append(info)
+
+if new_list[4]>new_list[9]:
+    net_profit = abs(new_list[9]-new_list[4])
+    print(f'[CASH DEFICIT] DAY: {new_list[5]}, AMOUNT:SGD{net_profit}')
+elif new_list[9]>new_list[14]:
+    net_profit = abs(new_list[14]-new_list[9])
+    print(f'[CASH DEFICIT] DAY: {new_list[10]}, AMOUNT:SGD{net_profit}')
+elif new_list[14]>new_list[19]:
+    net_profit = abs(new_list[19]-new_list[14])
+    print(f'[CASH DEFICIT] DAY: {new_list[15]}, AMOUNT:SGD{net_profit}')
+elif new_list[19]>new_list[24]:
+    net_profit = abs(new_list[24]-new_list[19])
+    print(f'[CASH DEFICIT] DAY: {new_list[20]}, AMOUNT:SGD{net_profit}')
+elif new_list[24]>new_list[29]:
+    net_profit = abs(new_list[29]-new_list[24])
+    print(f'[CASH DEFICIT] DAY: {new_list[25]}, AMOUNT:SGD{net_profit}')
