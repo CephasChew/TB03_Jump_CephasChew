@@ -6,13 +6,16 @@ with file_path.open(mode='r',encoding='UTF-8',newline='') as file:
     reader=csv.reader(file)
     next(reader)
     for line in reader:
+        print(line)
         for value in line:
             empty_list.append(value)
+print(empty_list)
 
 new_list = []
 for info in empty_list:
     info=int(info)
     new_list.append(info)
+print(new_list)
 
 if new_list[4]>new_list[9]:
     net_profit = abs(new_list[9]-new_list[4])
