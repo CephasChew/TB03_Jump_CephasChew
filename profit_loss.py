@@ -1,16 +1,18 @@
 from pathlib import Path
 import csv
 file_path = Path.cwd()/"CSV_reports"/"Profits and Loss.csv"
+#Current working directory for the csv file
 with open(file_path, newline='') as f:
     reader = csv.reader(f)
     data = list(reader)
+    #Convert csv file to list
 day40 = data[1]
 day41 = data[2]
 day42 = data[3]
 day43 = data[4]
 day44 = data[5]
 day45 = data[6]
-
+#Indexing to find the data
 np40 = int(day40[4])
 np41 = int(day41[4])
 np42 = int(day42[4])
