@@ -16,16 +16,18 @@ for info in empty_list:
 
 if new_list[4]>new_list[9]:
     net_profit = abs(new_list[9]-new_list[4])
-    print(f'[CASH DEFICIT] DAY: {new_list[5]}, AMOUNT:SGD{net_profit}')
+    print(f'[PROFIT DEFICIT] DAY: {new_list[5]}, AMOUNT:SGD{net_profit}')
 elif new_list[9]>new_list[14]:
     net_profit = abs(new_list[14]-new_list[9])
-    print(f'[CASH DEFICIT] DAY: {new_list[10]}, AMOUNT:SGD{net_profit}')
+    print(f'[PROFIT DEFICIT] DAY: {new_list[10]}, AMOUNT:SGD{net_profit}')
 elif new_list[14]>new_list[19]:
     net_profit = abs(new_list[19]-new_list[14])
-    print(f'[CASH DEFICIT] DAY: {new_list[15]}, AMOUNT:SGD{net_profit}')
+    print(f'[PROFIT DEFICIT] DAY: {new_list[15]}, AMOUNT:SGD{net_profit}')
 elif new_list[19]>new_list[24]:
     net_profit = abs(new_list[24]-new_list[19])
-    print(f'[CASH DEFICIT] DAY: {new_list[20]}, AMOUNT:SGD{net_profit}')
+    print(f'[PROFIT DEFICIT] DAY: {new_list[20]}, AMOUNT:SGD{net_profit}')
 elif new_list[24]>new_list[29]:
     net_profit = abs(new_list[29]-new_list[24])
-    print(f'[CASH DEFICIT] DAY: {new_list[25]}, AMOUNT:SGD{net_profit}')
+    print(f'[PROFIT DEFICIT] DAY: {new_list[25]}, AMOUNT:SGD{net_profit}')
+else:
+    print("[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
