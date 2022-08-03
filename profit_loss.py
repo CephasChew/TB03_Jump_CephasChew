@@ -44,8 +44,22 @@ def profitloss_function(forex):
             deficit_list.append(new_list[num])
     # print(deficit_list)
     # print(len(deficit_list))
+    for i in range(len(deficit_list)-1):
+        deficit_list[i] = deficit_list[i] - deficit_list[i+1]
+        deficit_list=(deficit_list[0:(len(deficit_list)-1)])
+    print(deficit_list)
+ 
+ 
+    positive_deficit_values=[]
+    deficit_days=[]
+    for values in deficit_list:
+        if values>0:
+            positive_deficit_values.append(values)
+            index= deficit_list.index(values)
+            new_list_index=((index+4)*2)
+            deficit_days.append(new_list[new_list_index])
+    print(positive_deficit_values)
+    print(deficit_days)
 
-for i in range(len(deficit_days)):
-    print(f"[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: USD{positive_deficit_values[i]} ")
-    
-
+    for i in range(len(deficit_days)):
+        print(f"[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: USD{positive_deficit_values[i]} ")
