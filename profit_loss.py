@@ -55,3 +55,4 @@ print(deficit_days)
 
 for i in range(len(deficit_days)):
     print(f"[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]} ")
+
