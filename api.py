@@ -14,7 +14,7 @@ for date in data["Time Series FX (Weekly)"]:
     open_list.append(data["Time Series FX (Weekly)"][date]["2. high"])
     open_list.append(data["Time Series FX (Weekly)"][date]["3. low"])
     open_list.append(data["Time Series FX (Weekly)"][date]["4. close"])
-print(len(open_list))
+
 empty_list=[]
 for number in open_list:
     number=float(number)
