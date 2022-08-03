@@ -1,8 +1,6 @@
 from pathlib import Path
 import api,coh,overheads,profit_loss,re
 
-
-
 def main():
 
     forex=api.api_function()
@@ -11,4 +9,4 @@ def main():
     profit_loss.profitloss_function(forex)
     
 main()
-    
+
