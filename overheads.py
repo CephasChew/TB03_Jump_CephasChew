@@ -5,6 +5,7 @@ import csv
 empty=[]
 category=[]
 
+
 file_path = Path.cwd()/"CSV_reports"
 overheads = Path.cwd()/"CSV_reports"/"Overheads.csv"
 
@@ -15,12 +16,16 @@ with overheads.open(mode="r", encoding = "UTF-8") as file:
         for line in reader:
                 empty.append(line[1])
                 category.append(line[0])
+                
+
 
 #create another empty list change it into float
 new=[]
 for info in empty:
         info= float(info)
         new.append(info)
+
+print(new)
 
 #group it by using the define function and through using loop to find the latest value
 def highest():
@@ -29,7 +34,9 @@ def highest():
         for each in (new):
                 if each > largestvalue:
                         largestvalue = each
+                        
+                        index=(new.index(largestvalue))
 
-        print("[HIGHEST OVERHEADS]",category[0],":", largestvalue)
+        print("[HIGHEST OVERHEADS]",category[index],":", largestvalue)
 highest()
                 
