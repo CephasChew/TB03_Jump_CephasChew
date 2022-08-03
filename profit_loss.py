@@ -12,7 +12,6 @@ with file_path.open(mode='r',encoding='UTF-8',newline='') as file:
             empty_list.append(int(value))
 print(empty_list)
 
-1
 if empty_list[4]>empty_list[9]:
     net_profit = abs(empty_list[9]-empty_list[4])
     print(f'[PROFIT DEFICIT] DAY: {empty_list[5]}, AMOUNT:SGD{net_profit}')
