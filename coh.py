@@ -49,7 +49,7 @@ def coh_function(forex):
     for i in range(len(deficit_list)-1):
         #creating formula to find the deficit
         deficit_list[i] = deficit_list[i] - deficit_list[i+1]
-    deficit_list=(deficit_list[0:(len(deficit_list)-1)])
+        deficit_list=(deficit_list[0:(len(deficit_list)-1)])
 
     #creating new list for +ve deficit values and days where deficit occured
     positive_deficit_values=[]
@@ -67,8 +67,8 @@ def coh_function(forex):
     #to iterate over the list to get the values needed
     for i in range(len(deficit_days)):
         statement = f"The deficit value is ${positive_deficit_values[i]} on day {deficit_days[i]}"
+        print(statement)
 
-
-    summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
-    with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-        file.write(statement)
+    # summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
+    # with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+    #   file.write(statement)

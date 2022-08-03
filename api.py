@@ -3,7 +3,7 @@ from pathlib import Path
 
 def api_function():
    
-   #Assign the free api key to a variable to add in th website later
+   #Assign the free api key to a variable to add in the website later
    api_key= "DAL5U3E14Y45E3DK"
    #The URL link with the function, from_currency and to_currency correctly assigned
    url=f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={api_key}"
@@ -19,17 +19,19 @@ def api_function():
    xchange_rate=(data["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
    #Making the value a float so it can be calculated later
    xchange_rate=float(xchange_rate)
-
+   print(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{xchange_rate}")
    #making a function
    def calculation(values):
       #xchange rate multipy by USD to get SGD
       new_value=xchange_rate*values
-      #Printing out the value after calculation
-      print(new_value)
+      #return the value after calculation
+      return new_value
+
       
-summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
-with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-   file.write("heelloww")
+         
+   # summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
+   # with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+   #    file.write()
 
 
 
