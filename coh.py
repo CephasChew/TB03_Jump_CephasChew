@@ -23,7 +23,6 @@ with file_path.open(mode='r', encoding= 'UTF-8', newline= '') as file:
         for info in line:
             #to append item at the end of the list
             empty_list.append(info)
-print(empty_list)
 
 #creating another list
 new_list=[]
@@ -33,7 +32,6 @@ for info in empty_list:
     info = int(info)
     #to append item at the back of the list
     new_list.append(info)
-print(new_list)
 
 #count the items in the new_list
 no=(len(new_list))
@@ -46,14 +44,11 @@ for num in range (no):
     if num%2==1:
         #appending values from one list into another
         deficit_list.append(new_list[num])
-print(deficit_list)
-print(len(deficit_list))
 #range to repeat the code for the values in the list, temporary variable i to store integer value of current postition in range
 for i in range(len(deficit_list)-1):
     #creating formula to find the deficit
     deficit_list[i] = deficit_list[i] - deficit_list[i+1]
 deficit_list=(deficit_list[0:(len(deficit_list)-1)])
-print(deficit_list)
 
 #creating new list for +ve deficit values and days where deficit occured
 positive_deficit_values=[]
@@ -67,8 +62,7 @@ for values in deficit_list:
         index= deficit_list.index(values)
         new_list_index=((index+1)*2)
         deficit_days.append(new_list[new_list_index])
-print(positive_deficit_values)
-print(deficit_days)
+
 #to iterate over the list to get the values needed
 for i in range(len(deficit_days)):
     print(f"The deficit value is ${positive_deficit_values[i]} on day {deficit_days[i]}")
