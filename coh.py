@@ -6,12 +6,13 @@ import csv
 from posixpath import sep
 import re
 
-def coh_function(forex):
+# def coh_function(forex):
         
     #create empty list
     empty_list=[]
     #creating file path
-    file_path=Path(r"C:/Jump_python/CSV_reports/Cash on Hand.csv")
+    # file_path=Path(r"C:/Jump_python/CSV_reports/Cash on Hand.csv")
+    file_path = Path.cwd/"CSV_reports"/"Cash on Hand.csv"
 
     #to open the file
     with file_path.open(mode='r', encoding= 'UTF-8', newline= '') as file:
@@ -67,3 +68,6 @@ def coh_function(forex):
     #to iterate over the list to get the values needed
     for i in range(len(deficit_days)):
         print(f"The deficit value is ${positive_deficit_values[i]} on day {deficit_days[i]}")
+
+    # summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
+    # with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
