@@ -20,4 +20,4 @@ for number in open_list:
     number=float(number)
     empty_list.append(number)
 average_USD_to_SGD=(sum(empty_list)/len(open_list))
-print(average_USD_to_SGD)
+print(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{average_USD_to_SGD}")
