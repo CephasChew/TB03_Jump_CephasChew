@@ -1,7 +1,7 @@
 from pathlib import Path
 import csv
 
-def overheads_function(forex):
+def overhead_function(forex):
         
         empty=[]
         category=[]
@@ -16,12 +16,10 @@ def overheads_function(forex):
                 for line in reader:
                         empty.append(line[1])
                         category.append(line[0])
-
-        #create another empty list change it into float
         new=[]
-        for info in empty:
-                info= float(info)
-                new.append(info)
+        for values in empty:
+                values=float(values)
+                new.append(values)           
 
         #group it by using the define function and through using loop to find the latest value
         def highest():
@@ -30,7 +28,9 @@ def overheads_function(forex):
                 for each in (new):
                         if each > largestvalue:
                                 largestvalue = each
+                                        
+                                index=(new.index(largestvalue))
 
-                print("[HIGHEST OVERHEADS]",category[0],":", largestvalue)
+                print("[HIGHEST OVERHEADS]",category[index],":", largestvalue)
         highest()
                 
