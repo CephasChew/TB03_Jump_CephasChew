@@ -1,5 +1,5 @@
 from pathlib import Path
-import api,coh,overheads,profit_loss
+import api,coh,overheads,profit_loss,re
 
 # create a file path for summary_report.txt
 file_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
@@ -9,19 +9,12 @@ file_path.touch()
 print(file_path.exists())
 
 
-def overhead_function(forex):
-    for overheads_summary in overheads:
         
 
-
-
-
-
-
-# def main():
-#     forex=api.api_function()
-#     overheads.overhead_function(forex)
-#     coh.coh_function(forex)
-#     profit_loss.profitloss_function(forex)
-# main()
+def main():
+    forex=api.api_function()
+    overheads.overhead_function(forex)
+    coh.coh_function(forex)
+    profit_loss.profitloss_function(forex)
+main()
     
