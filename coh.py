@@ -10,8 +10,9 @@ from posixpath import sep
 
 #create empty list
 empty_list=[]   
-#creating file path
+#creating file paths for Cash on Hand.csv and for summary_report.txt
 file_path=Path(r"C:/Jump_python/CSV_reports/Cash on Hand.csv")
+summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
 
 #to open the file
 with file_path.open(mode='r', encoding= 'UTF-8', newline= '') as file:
@@ -24,8 +25,6 @@ with file_path.open(mode='r', encoding= 'UTF-8', newline= '') as file:
         for info in line:
             #to append item at the end of the list
             empty_list.append(info)
-# print to check that the correct contents are in empty_list
-print(empty_list)
 
 #creating another empty list
 new_list=[]
@@ -35,8 +34,6 @@ for info in empty_list:
     info = int(info)
     #to append item at the back of the list
     new_list.append(info)
-# print new_list to check that the content in the list is correct
-print(new_list)
 
 #count the items in the new_list
 no=(len(new_list))
@@ -71,11 +68,11 @@ for values in deficit_list:
 
 #to iterate over the list to get the values needed
 for i in range(len(deficit_days)):
-    print(f"The deficit value is ${positive_deficit_values[i]} on day {deficit_days[i]}")
+    with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+        file.write(f"\n[CASH DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]}")
 
-    # summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
-    # with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-    #     file.write()
+
+
     
 
 
