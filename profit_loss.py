@@ -1,10 +1,10 @@
-# from ast import pattern
-# from dataclasses import replace
-# from operator import index
+from ast import pattern
+from dataclasses import replace
+from operator import index
 from pathlib import Path
 import csv
-# from pickle import EMPTY_LIST
-# from posixpath import sep
+from pickle import EMPTY_LIST
+from posixpath import sep
 
 # create a function 'profitloss_function' with the parameter 'forex' to be used in main.py
 def profitloss_function():

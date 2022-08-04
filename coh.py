@@ -1,9 +1,9 @@
-# from ast import pattern
-# from dataclasses import replace
-# from operator import index
+from ast import pattern
+from dataclasses import replace
+from operator import index
 from pathlib import Path
 import csv
-# from posixpath import sep
+from posixpath import sep
 
 # create a function coh_function with forex as its parameter to be used in main.py
 def coh_function():
