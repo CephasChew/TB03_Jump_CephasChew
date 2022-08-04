@@ -5,8 +5,8 @@ from pathlib import Path
 import csv,re
 from posixpath import sep
 
-# create a function coh_function(forex) to be used in main.py
-def coh_function(forex):
+# create a function coh_function with forex as its parameter to be used in main.py
+def coh_function():
 
     #create empty list
     empty_list=[]   

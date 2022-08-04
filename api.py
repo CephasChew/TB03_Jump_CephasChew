@@ -25,12 +25,12 @@ def api_function():
    with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
       file.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{xchange_rate}")
    #making a function
-   def calculation(values):
-      #xchange rate multipy by USD to get SGD
-      new_value=xchange_rate*values
-      #return the value after calculation
-      return new_value
-   calculation()
+   # def calculation(values):
+   #    #xchange rate multipy by USD to get SGD
+   #    new_value=xchange_rate*values
+   #    #return the value after calculation
+   #    return new_value
+   # calculation()
 
 api_function()
 

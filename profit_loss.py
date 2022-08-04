@@ -6,7 +6,8 @@ import csv,re
 from pickle import EMPTY_LIST
 from posixpath import sep
 
-def profitloss_function(forex):
+# create a function 'profitloss_function' with the parameter 'forex' to be used in main.py
+# def profitloss_function():
 
 #Creating empty list
 empty_list=[]
@@ -41,11 +42,13 @@ for num in range (no):
     if num%5==4:
         #appending the values into a deficit list
         deficit_list.append(new_list[num])
-#This is to handle the scenario where cash on hand is in ascending order
-#when i use sorted.(), it will arrange the values in the list in ascending order
-#Thus, if cash on hand is always higher than the previous day, it will be ascending
+
+# if the items in deficit_list are sorted in ascending order, append '[CASH SURPLUS] CASH ON EACH DAY IS 
+# HIGHER THAN THE PREVIOUS DAY' into the text file, summary_path.txt
 if deficit_list==sorted(deficit_list):
-    print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+    with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+        file.write(f"\n[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
 #For loop to find out the difference in profit everyday
 for i in range(len(deficit_list)-1):
     deficit_list[i] = deficit_list[i] - deficit_list[i+1]
@@ -67,64 +70,7 @@ for values in deficit_list:
         deficit_days.append(new_list[new_list_index])
 #for loop to iterate over the number of days
 for i in range(len(deficit_days)):
-    #printing the final statement
-    print(f"[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]}")
+    with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+        file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]} ")
 
-# for i in range(len(deficit_days)):
-#     with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-#         file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]} ")
-
-    #to open the file
-    with file_path.open(mode='r', encoding= 'UTF-8', newline= '') as file:
-        reader=csv.reader(file)
-        #reading the csv file
-        next(reader)
-        #for... in loop to iterate over the list
-        for line in reader:
-            for info in line:
-                #to append item at the end of the list
-                empty_list.append(info)
-    # print(empty_list)
-
-    #creating a new list
-    new_list=[]
-    for info in empty_list:
-        #for ... in loop to iterate over the list
-        info = int(info)
-        #change the numbers into integers with int()
-        new_list.append(info)
-    # print(new_list)
-    #count the number of elements in the new list with len()
-    no=(len(new_list))
-    #creating a new list for the deficit
-    deficit_list=[]
-
-    for num in range (no):
-        if num%5==4:
-            #comparing values and setting condition
-            deficit_list.append(new_list[num])
-
-    # if the items in deficit_list are sorted in ascending order, append '[CASH SURPLUS] CASH ON EACH DAY IS 
-    # HIGHER THAN THE PREVIOUS DAY' into the text file, summary_path.txt
-    if deficit_list==sorted(deficit_list):
-        with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-                file.write(f"\n[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-
-    for i in range((len(deficit_list))-1):
-        deficit_list[i] = deficit_list[i] - deficit_list[i+1]
-    deficit_list.pop()
-
-    positive_deficit_values=[]
-    deficit_days=[]
-    for values in deficit_list:
-        if values>0:
-            positive_deficit_values.append(values)
-            index= deficit_list.index(values)
-            new_list_index=((index+4)*2)
-            deficit_days.append(new_list[new_list_index])
-
-    for i in range(len(deficit_days)):
-        with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-            file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]} ")
-
-profitloss_function()
+# profitloss_function()
