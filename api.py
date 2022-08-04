@@ -1,6 +1,7 @@
 import json,requests
 from pathlib import Path
 
+# create a function api_function() to be used in main.py
 def api_function():
    
    #Assign the free api key to a variable to add in the website later
@@ -29,6 +30,7 @@ def api_function():
       new_value=xchange_rate*values
       #return the value after calculation
       return new_value
+   calculation()
 
 api_function()
 

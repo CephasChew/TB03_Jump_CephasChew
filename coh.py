@@ -5,7 +5,7 @@ from pathlib import Path
 import csv,re
 from posixpath import sep
 
-
+# create a function coh_function(forex) to be used in main.py
 def coh_function(forex):
 
     #create empty list
@@ -14,13 +14,13 @@ def coh_function(forex):
     file_path=Path(r"C:/Jump_python/CSV_reports/Cash on Hand.csv")
     summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
 
-    #to open the file
+    # open file_path in read mode
     with file_path.open(mode='r', encoding= 'UTF-8', newline= '') as file:
-        #to read the csv file
+        # read the csv file(file_path) using csv.reader
         reader=csv.reader(file)
-        #to obtain next value as file is being iterated through
+        # returns the next item in the iteration
         next(reader)
-        #for...in loop to iterate over the list
+        # use for loop to iterate over the list
         for line in reader:
             for info in line:
                 #to append item at the end of the list
@@ -46,6 +46,12 @@ def coh_function(forex):
         if num%2==1:
             #appending values from one list into another
             deficit_list.append(new_list[num])
+
+    # if the items in deficit_list are sorted in ascending order, append '[CASH SURPLUS] CASH ON EACH DAY IS 
+    # HIGHER THAN THE PREVIOUS DAY' into the text file, summary_path.txt
+    if deficit_list==sorted(deficit_list):
+        with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+                file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
     #range to repeat the code for the values in the list, temporary variable i to store integer value of current postition in range
     for i in range((len(deficit_list))-1):

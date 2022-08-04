@@ -44,12 +44,16 @@ def profitloss_function(forex):
         if num%5==4:
             #comparing values and setting condition
             deficit_list.append(new_list[num])
-        # print(deficit_list)
-        # print(len(deficit_list))
+
+    # if the items in deficit_list are sorted in ascending order, append '[CASH SURPLUS] CASH ON EACH DAY IS 
+    # HIGHER THAN THE PREVIOUS DAY' into the text file, summary_path.txt
+    if deficit_list==sorted(deficit_list):
+        with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+                file.write(f"\n[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
     for i in range((len(deficit_list))-1):
         deficit_list[i] = deficit_list[i] - deficit_list[i+1]
     deficit_list.pop()
-
 
     positive_deficit_values=[]
     deficit_days=[]
