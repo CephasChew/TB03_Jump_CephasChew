@@ -10,8 +10,10 @@ import re
 
 #Creating empty list
 empty_list=[]
+
+# create file paths for Profits and Loss.csv and summary_report.txt
 file_path=Path.cwd()/"CSV_reports"/"Profits and Loss.csv"
-#Current working directory for the folder
+summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
 
 #to open the file
 with file_path.open(mode='r', encoding= 'UTF-8', newline= '') as file:
@@ -44,10 +46,9 @@ for num in range (no):
         deficit_list.append(new_list[num])
     # print(deficit_list)
     # print(len(deficit_list))
-for i in range(len(deficit_list)-1):
+for i in range((len(deficit_list))-1):
     deficit_list[i] = deficit_list[i] - deficit_list[i+1]
-    deficit_list=(deficit_list[0:(len(deficit_list)-1)])
-    print(deficit_list)    
+deficit_list.pop()
 
 
 positive_deficit_values=[]
@@ -58,8 +59,7 @@ for values in deficit_list:
         index= deficit_list.index(values)
         new_list_index=((index+4)*2)
         deficit_days.append(new_list[new_list_index])
-print(positive_deficit_values)
-print(deficit_days)
 
 for i in range(len(deficit_days)):
-    print(f"[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: USD{positive_deficit_values[i]} ")
+    with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+        file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]} ")
