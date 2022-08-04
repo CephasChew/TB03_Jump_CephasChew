@@ -1,5 +1,5 @@
 from pathlib import Path
-import csv
+import csv,api
 
 # create a function 'overhead_function' with 'forex' as its parameter(to be used in main.py)
 def overhead_function():
@@ -49,7 +49,7 @@ def overhead_function():
                 # open summary_path.txt in append mode and use .write() to append the largest value and 
                 # its respective category into the text file with the title [HIGHEST OVERHEADS]
                 with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-                        file.write(f"\n[HIGHEST OVERHEADS] {category[index]} : {largestvalue}")
+                        file.write(f"\n[HIGHEST OVERHEADS] {category[index]} : {api.api_function()*largestvalue}")
         # call the function 
         highest()
         

@@ -2,7 +2,7 @@ from ast import pattern
 from dataclasses import replace
 from operator import index
 from pathlib import Path
-import csv
+import csv,api
 from pickle import EMPTY_LIST
 from posixpath import sep
 
@@ -71,7 +71,7 @@ def profitloss_function():
     #for loop to iterate over the number of days
     for i in range(len(deficit_days)):
         with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-            file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]} ")
+            file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{api.api_function()*positive_deficit_values[i]} ")
 
 # call the function
 profitloss_function()
