@@ -1,9 +1,9 @@
-from ast import pattern
-from dataclasses import replace
-from operator import index
+# from ast import pattern
+# from dataclasses import replace
+# from operator import index
 from pathlib import Path
-import csv,re
-from posixpath import sep
+import csv
+# from posixpath import sep
 
 # create a function coh_function with forex as its parameter to be used in main.py
 def coh_function():
@@ -20,7 +20,7 @@ def coh_function():
         reader=csv.reader(file)
         # returns the next item in the iteration
         next(reader)
-        # use for loop to iterate over the list
+        # use for loop to iterate over reader
         for line in reader:
             for info in line:
                 #to append item at the end of the list
@@ -28,23 +28,23 @@ def coh_function():
 
     #creating another empty list
     new_list=[]
-    #for...in loop to iterate over the list
+    #using for loop to iterate over the list
     for info in empty_list:
         #turn the numbers in the list into integers
         info = int(info)
-        #to append item at the back of the list
+        #to append item at the end of the list
         new_list.append(info)
 
-    #count the items in the new_list
+    #count the number of items in the new_list
     no=(len(new_list))
 
     #creating new list for deficit
     deficit_list=[]
-    #for...in loop to iterate over the list
+    #using for loop to iterate over the list
     for num in range (no):
         #comparing values and setting condition
         if num%2==1:
-            #appending values from one list into another
+            #appending values from new_list into deficit_list when condition is met
             deficit_list.append(new_list[num])
 
     # if the items in deficit_list are sorted in ascending order, append '[CASH SURPLUS] CASH ON EACH DAY IS 
@@ -53,16 +53,18 @@ def coh_function():
         with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
                 file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
-    #range to repeat the code for the values in the list, temporary variable i to store integer value of current postition in range
+    #range to repeat the code for the values in the list, temporary variable i to store integer value of 
+    # current postition in range
     for i in range((len(deficit_list))-1):
         #creating formula to find the deficit
         deficit_list[i]=(deficit_list[i]-deficit_list[i+1])
+    # use .pop() to remove the last value
     deficit_list.pop()
 
-    #creating new list for +ve deficit values and days where deficit occured
+    #creating new lists for positive deficit values and days where deficit occured
     positive_deficit_values=[]
     deficit_days=[]
-    #for...in loop to iterate over the list
+    #use for loop to iterate over the list
     for values in deficit_list:
         #setting conditions
         if values>0:
