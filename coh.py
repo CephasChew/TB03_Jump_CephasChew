@@ -80,6 +80,4 @@ def coh_function(forex):
 coh_function()
 
 
-    
-
 
