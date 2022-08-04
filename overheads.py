@@ -30,7 +30,7 @@ def highest():
                 if each > largestvalue:
                         largestvalue = each
                         index=(new.index(largestvalue))
-        with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+        with summary_path.open(mode="a", encoding="UTF-8", newline="\n") as file:
                 file.write(f"[HIGHEST OVERHEADS] {category[index]} : {largestvalue}")
 highest()
                 
