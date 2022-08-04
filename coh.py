@@ -3,6 +3,7 @@ from dataclasses import replace
 from operator import index
 from pathlib import Path
 import csv
+from api import xchange_rate
 from posixpath import sep
 
 # create a function coh_function with forex as its parameter to be used in main.py
