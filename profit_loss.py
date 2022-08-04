@@ -72,6 +72,3 @@ def profitloss_function(forex):
     for i in range(len(deficit_days)):
         with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
             file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{forex * positive_deficit_values[i]} ")
-
-# call the function
-profitloss_function()

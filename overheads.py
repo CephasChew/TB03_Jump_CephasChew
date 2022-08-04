@@ -49,10 +49,8 @@ def overhead_function(forex):
                 # open summary_path.txt in append mode and use .write() to append the largest value and 
                 # its respective category into the text file with the title [HIGHEST OVERHEADS]
                 with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-                        file.write(f"\n[HIGHEST OVERHEADS] {category[index]} : {forex * largestvalue}")
+                        file.write(f"\n[HIGHEST OVERHEADS] {category[index]} : {largestvalue}")
         # call the function 
         highest()
-        
-# call the function
-overhead_function()
+
                 
