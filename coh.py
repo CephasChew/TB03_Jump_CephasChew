@@ -79,6 +79,7 @@ def coh_function():
         with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
             file.write(f"\n[CASH DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]}")
 
+# call the function
 coh_function()
 
 

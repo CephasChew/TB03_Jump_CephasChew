@@ -73,4 +73,5 @@ def profitloss_function():
         with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
             file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]} ")
 
+# call the function
 profitloss_function()

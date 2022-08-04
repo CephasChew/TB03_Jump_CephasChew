@@ -22,12 +22,15 @@ def api_function():
    #Making the value a float so it can be calculated later
    xchange_rate=float(xchange_rate)
 
+# create a file path 'summary_path' for summary_report.txt
    summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
+   # open summary_path in write mode
    with summary_path.open(mode="w", encoding="UTF-8", newline="") as file:
       file.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{xchange_rate}")
 
    return xchange_rate
 
+# call the function
 api_function()
 
 
