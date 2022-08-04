@@ -3,11 +3,10 @@ from dataclasses import replace
 from operator import index
 from pathlib import Path
 import csv
-from api import xchange_rate
 from posixpath import sep
 
 # create a function coh_function with forex as its parameter to be used in main.py
-def coh_function():
+def coh_function(forex):
 
     #create empty list
     empty_list=[]   
@@ -78,11 +77,7 @@ def coh_function():
     #to iterate over the list to get the values needed
     for i in range(len(deficit_days)):
         with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-            file.write(f"\n[CASH DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]}")
-    
-    def coh(rate):
-        SGD = positive_deficit_values[i]*rate
-    coh()
+            file.write(f"\n[CASH DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{forex * positive_deficit_values[i]}")
 
 # call the function
 coh_function()
