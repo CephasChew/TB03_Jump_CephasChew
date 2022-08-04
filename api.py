@@ -19,19 +19,16 @@ def api_function():
    xchange_rate=(data["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
    #Making the value a float so it can be calculated later
    xchange_rate=float(xchange_rate)
-   print(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{xchange_rate}")
+
+   summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
+   with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+      file.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{xchange_rate}")
    #making a function
    def calculation(values):
       #xchange rate multipy by USD to get SGD
       new_value=xchange_rate*values
       #return the value after calculation
       return new_value
-
-      
-         
-   # summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
-   # with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-   #    file.write()
 
 
 
