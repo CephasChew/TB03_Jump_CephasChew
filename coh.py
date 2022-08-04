@@ -31,7 +31,7 @@ def coh_function():
     #using for loop to iterate over the list
     for info in empty_list:
         #turn the numbers in the list into integers
-        info = int(info)
+        info = float(info)
         #to append item at the end of the list
         new_list.append(info)
 
@@ -78,7 +78,6 @@ def coh_function():
     for i in range(len(deficit_days)):
         with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
             file.write(f"\n[CASH DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]}")
-
 
 coh_function()
 
