@@ -2,11 +2,12 @@ from ast import pattern
 from dataclasses import replace
 from operator import index
 from pathlib import Path
-import csv
+import csv,re
 from pickle import EMPTY_LIST
 from posixpath import sep
-import re
 
+# create a function 'profitloss_function' with the parameter 'forex' to be used in main.py
+# def profitloss_function():
 
 #Creating empty list
 empty_list=[]
@@ -41,11 +42,13 @@ for num in range (no):
     if num%5==4:
         #appending the values into a deficit list
         deficit_list.append(new_list[num])
-#This is to handle the scenario where cash on hand is in ascending order
-#when i use sorted.(), it will arrange the values in the list in ascending order
-#Thus, if cash on hand is always higher than the previous day, it will be ascending
+
+# if the items in deficit_list are sorted in ascending order, append '[CASH SURPLUS] CASH ON EACH DAY IS 
+# HIGHER THAN THE PREVIOUS DAY' into the text file, summary_path.txt
 if deficit_list==sorted(deficit_list):
-    print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+    with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+        file.write(f"\n[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
 #For loop to find out the difference in profit everyday
 for i in range(len(deficit_list)-1):
     deficit_list[i] = deficit_list[i] - deficit_list[i+1]
@@ -67,10 +70,7 @@ for values in deficit_list:
         deficit_days.append(new_list[new_list_index])
 #for loop to iterate over the number of days
 for i in range(len(deficit_days)):
-    #printing the final statement
-    print(f"[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]}")
+    with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
+        file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]} ")
 
-# for i in range(len(deficit_days)):
-#     with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:
-#         file.write(f"\n[PROFIT DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]} ")
-
+# profitloss_function()
