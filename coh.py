@@ -49,15 +49,12 @@ for num in range (no):
     if num%2==1:
         #appending values from one list into another
         deficit_list.append(new_list[num])
-print(deficit_list)
-print(len(deficit_list))
 
 #range to repeat the code for the values in the list, temporary variable i to store integer value of current postition in range
-for i in range(len(deficit_list-1)):
+for i in range((len(deficit_list))-1):
     #creating formula to find the deficit
-    deficit_list[i] = deficit_list[i] - deficit_list[i+1]
-    deficit_list=(deficit_list[0:(len(deficit_list)-1)])
-print(deficit_list)
+    deficit_list[i]=(deficit_list[i]-deficit_list[i+1])
+deficit_list.pop()
 
 #creating new list for +ve deficit values and days where deficit occured
 positive_deficit_values=[]
