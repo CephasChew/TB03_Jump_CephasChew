@@ -30,6 +30,7 @@ def api_function():
       #return the value after calculation
       return new_value
 
+api_function()
 
 
 

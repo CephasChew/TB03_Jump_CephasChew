@@ -52,4 +52,6 @@ def overhead_function(forex):
                         file.write(f"\n[HIGHEST OVERHEADS] {category[index]} : {largestvalue}")
         # call the function 
         highest()
+
+overhead_function()
                 
