@@ -50,6 +50,12 @@ for num in range (no):
         #appending values from one list into another
         deficit_list.append(new_list[num])
 
+#This is to handle the scenario where cash on hand is in ascending order
+#when i use sorted.(), it will arrange the values in the list in ascending order
+#Thus, if cash on hand is always higher than the previous day, it will be ascending
+if deficit_list==sorted(deficit_list):
+    print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
 #range to repeat the code for the values in the list, temporary variable i to store integer value of current postition in range
 for i in range((len(deficit_list))-1):
     #creating formula to find the deficit
@@ -71,7 +77,7 @@ for values in deficit_list:
 
 #to iterate over the list to get the values needed
 for i in range(len(deficit_days)):
-    print(f"The deficit value is ${positive_deficit_values[i]} on day {deficit_days[i]}")
+    print(f"[CASH DEFICIT] DAY: {deficit_days[i]}, AMOUNT: SGD{positive_deficit_values[i]}")
 
     # summary_path = Path.cwd()/"CSV_reports"/"summary_report.txt"
     # with summary_path.open(mode="a", encoding="UTF-8", newline="") as file:

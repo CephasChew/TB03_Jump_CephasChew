@@ -38,16 +38,24 @@ no=(len(new_list))
 #creating a new list for the deficit
 deficit_list=[]
 
+
 for num in range (no):
     if num%5==4:
         #comparing values and setting condition
         deficit_list.append(new_list[num])
     # print(deficit_list)
     # print(len(deficit_list))
+
+#This is to handle the scenario where cash on hand is in ascending order
+#when i use sorted.(), it will arrange the values in the list in ascending order
+#Thus, if cash on hand is always higher than the previous day, it will be ascending
+if deficit_list==sorted(deficit_list):
+    print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
 for i in range(len(deficit_list)-1):
     deficit_list[i] = deficit_list[i] - deficit_list[i+1]
-    deficit_list=(deficit_list[0:(len(deficit_list)-1)])
-    print(deficit_list)    
+deficit_list.pop()
+print(deficit_list)    
 
 
 positive_deficit_values=[]
